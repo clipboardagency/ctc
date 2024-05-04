@@ -2,7 +2,7 @@
   "name": "@clipboardagency/ctc",
   "version": "0.0.3",
   "description": "Effortlessly copy anything to clipboard. Install now for quick access to snippets, no highlighting needed.",
-  "main": "src/index.js",
+  "main": "dist/ctc.js",
   "scripts": {
     "build": "webpack --mode=production",
     "watch": "webpack --mode=development --watch"
