@@ -1,9 +1,12 @@
+import './style.css'
+
 /*!
  * ctc.js v1.0.0
  * https://clipboard.agency/
  *
  * Licensed MIT © Clipboard Agency
  */
+
 class CTC {
 
     /**

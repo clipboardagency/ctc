@@ -1,0 +1,68 @@
+/**
+* Button
+*/
+[id^="ctc-js-"] {
+    --ctc-js-btn-bg: linear-gradient(45deg, #c34f84, #903bd9, #eb5e35);
+    --ctc-js-btn-bg-hover: linear-gradient(45deg, #eb5e35, #903bd9, #c34f84);
+    --ctc-js-btn-color: white;
+    --ctc-js-text-color: white;
+}
+
+[id^="ctc-js-"].ctc-js-btn,
+[id^="ctc-js-"].ctc-js-btn:hover,
+[id^="ctc-js-"].ctc-js-btn:focus {
+    height: auto;
+    min-width: auto;
+    background: var(--ctc-js-btn-bg);
+    display: inline-flex;
+    align-items: center;
+    max-width: max-content;
+    gap: 5px;
+    margin: 2px 0;
+    border-radius: 2px;
+    border: none;
+    color: var(--ctc-js-btn-color);
+    padding: 4px 6px;
+    font-size: 10px;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: 500;
+}
+
+[id^="ctc-js-"] svg {
+    height: 1em;
+    width: 1em;
+    line-height: 1em;
+    font-size: 10px;
+}
+
+[id^="ctc-js-"] .ctc-js-icon--copied {
+    display: none;
+}
+
+[id^="ctc-js-"].ctc-js-btn--copied .ctc-js-icon--copied {
+    display: block;
+}
+
+[id^="ctc-js-"].ctc-js-btn--copied .ctc-js-icon--default {
+    display: none;
+}
+
+[id^="ctc-js-"] .ctc-js-btn__text {
+    color: var(--ctc-js-text-color);
+}
+
+[id^="ctc-js-"]:hover,
+[id^="ctc-js-"]:focus {
+    outline: none;
+    box-shadow: none;
+    text-shadow: none;
+    background: var(--ctc-js-btn-bg-hover);
+}
+
+[id^="ctc-js-"].ctc-js-btn--default:hover,
+[id^="ctc-js-"].ctc-js-btn--default:focus {
+    border-color: transparent;
+    color: white;
+    height: auto;
+}
