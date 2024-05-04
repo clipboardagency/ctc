@@ -180,3 +180,5 @@ class CTC {
         return btn
     }
 }
+
+export default CTC
