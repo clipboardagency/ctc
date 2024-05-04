@@ -195,8 +195,3 @@ A function that will be called if there is an error copying the content.
 
 MIT © [Clipboard Agency](https://clipboard.agency)
 ```
-
-## Demo
-
-[View Demo](https://clipboard.agency/ctc)
-
