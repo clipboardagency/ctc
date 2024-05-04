@@ -1,6 +1,6 @@
 {
   "name": "@clipboardagency/ctc",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Effortlessly copy anything to clipboard. Install now for quick access to snippets, no highlighting needed.",
   "main": "dist/ctc.js",
   "module": "src/index.js",
@@ -23,9 +23,6 @@
     "url": "https://github.com/clipboardagency/ctc/issues"
   },
   "homepage": "https://github.com/clipboardagency/ctc#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "devDependencies": {
     "@babel/core": "^7.24.5",
     "@babel/preset-env": "^7.24.5",
