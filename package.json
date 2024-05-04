@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/clipboardagency/ctc/issues"
   },
-  "homepage": "https://github.com/clipboardagency/ctc#readme"
+  "homepage": "https://github.com/clipboardagency/ctc#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
