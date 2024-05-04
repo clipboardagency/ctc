@@ -1,0 +1,24 @@
+{
+  "name": "clipboardagency/ctc",
+  "version": "0.0.1",
+  "description": "Effortlessly copy anything to clipboard. Install now for quick access to snippets, no highlighting needed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clipboardagency/ctc.git"
+  },
+  "keywords": [
+    "ctc",
+    "copy",
+    "copy to clipboard"
+  ],
+  "author": "Clipboard Agency",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clipboardagency/ctc/issues"
+  },
+  "homepage": "https://github.com/clipboardagency/ctc#readme"
+}
