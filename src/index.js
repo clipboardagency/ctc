@@ -175,7 +175,13 @@ class CTC {
     }
 }
 
-// Set CTC as a global variable
-window.CTC = CTC;
+// Exporting CTC class for both CommonJS and ES modules
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = CTC;
+}
+
+if (typeof window !== 'undefined') {
+    window.CTC = CTC;
+}
 
 export default CTC;
