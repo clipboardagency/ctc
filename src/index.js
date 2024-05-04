@@ -181,4 +181,4 @@ class CTC {
     }
 }
 
-export default CTC
+export default CTC;
