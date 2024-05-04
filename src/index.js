@@ -17,17 +17,11 @@ class CTC {
      * @param {string} className
      * @param {string} innerHtml
      */
-    constructor(selectors = null, options = {}) {
-        if (!navigator.clipboard) {
-            return
+    constructor(selectors = '', options = {}) {
+        this.selectors = selectors ? document.querySelectorAll(selectors) : [];
+        if (!navigator.clipboard || !this.selectors.length) {
+            return;
         }
-
-        const elements = document.querySelectorAll(selectors)
-        if (!elements.length) {
-            return
-        }
-
-        this.selectors = elements
 
         const defaults = {
             default: {
@@ -180,5 +174,8 @@ class CTC {
         return btn
     }
 }
+
+// Set CTC as a global variable
+window.CTC = CTC;
 
 export default CTC;
