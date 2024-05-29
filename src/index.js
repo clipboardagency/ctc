@@ -193,6 +193,8 @@ class CTC {
         const textArea = document.createElement('textarea')
         textArea.value = content
         document.body.appendChild(textArea)
+
+        return textArea
     }
 
     selectText( node ) {

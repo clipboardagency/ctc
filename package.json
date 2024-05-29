@@ -1,6 +1,6 @@
 {
   "name": "@clipboardagency/ctc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Effortlessly copy anything to clipboard. Install now for quick access to snippets, no highlighting needed.",
   "main": "dist/ctc.js",
   "module": "src/index.js",
