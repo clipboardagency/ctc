@@ -16,14 +16,14 @@ It is a lightweight library that is easy to use and has no dependencies.
 
 ### Download
 
-- [ctc.js](https://unpkg.com/@clipboardagency/ctc@0.0.13/dist/ctc.js) - Version 0.0.13
+- [ctc.js](https://unpkg.com/@clipboardagency/ctc@1.0.0/dist/ctc.js) - Version 1.0.0
 
 ### CDN
 
 Link directly to CTC files on unpkg.
 
 ```html
-<script src="https://unpkg.com/@clipboardagency/ctc@0.0.13/dist/ctc.js"></script>
+<script src="https://unpkg.com/@clipboardagency/ctc@1.0.0/dist/ctc.js"></script>
 ```
 
 ### NPM

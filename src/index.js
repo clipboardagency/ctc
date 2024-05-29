@@ -22,7 +22,7 @@ class CTC {
      */
     constructor(selectors = '', options = {}) {
         this.selectors = selectors ? document.querySelectorAll(selectors) : [];
-        if (!navigator.clipboard || !this.selectors.length) {
+        if (!this.selectors.length) {
             return;
         }
 
@@ -151,30 +151,72 @@ class CTC {
         // Add click event listener to copy text
         btn.addEventListener('click', async (event) => {
             event.preventDefault()
-            navigator.clipboard.writeText(content)
-                .then(() => {
-                    if (this.options.success) {
-                        this.options.success(event)
-                    }
-
-                    btn.classList.add(this.options.copied.class)
-                    if (this.options.copied.text) {
-                        btn.querySelector(`.${this.options.default.textClass}`).innerText = this.options.copied.text
-                    }
-                    setTimeout(() => {
-                        btn.classList.remove(this.options.copied.class)
-                        if (this.options.copied.text) {
-                            btn.querySelector(`.${this.options.default.textClass}`).innerText = this.options.default.text
-                        }
-                    }, this.options.timeOut)
-                }, (err) => {
-                    if (this.options.error) {
-                        this.options.error(err)
-                    }
-                })
+            
+            this.processCopy(content, btn, event)
         })
 
         return btn
+    }
+
+    async processCopy(content, btn, event) {
+        if ( typeof navigator.clipboard === 'undefined' ) {
+            const node = this.createTextArea(content)
+            this.selectText( node )
+            this.doCopy( node )
+        } else {
+            const response = await navigator.clipboard.writeText(content)
+            if ( ! response) {
+                if (this.options.error) {
+                    this.options.error(err)
+                }
+            }
+        }
+
+        // Success callback.
+        if (this.options.success) {
+            this.options.success(event)
+        }
+
+        btn.classList.add(this.options.copied.class)
+        if (this.options.copied.text) {
+            btn.querySelector(`.${this.options.default.textClass}`).innerText = this.options.copied.text
+        }
+        setTimeout(() => {
+            btn.classList.remove(this.options.copied.class)
+            if (this.options.copied.text) {
+                btn.querySelector(`.${this.options.default.textClass}`).innerText = this.options.default.text
+            }
+        }, this.options.timeOut)
+    }
+
+    createTextArea(content) {
+        const textArea = document.createElement('textarea')
+        textArea.value = content
+        document.body.appendChild(textArea)
+    }
+
+    selectText( node ) {
+        let range, selection
+
+        if ( this.isOS() ) {
+            range = document.createRange();
+            range.selectNodeContents(node);
+            selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            node.setSelectionRange(0, 999999);
+        } else {
+            node.select();
+        }
+    }
+
+    doCopy( node ) {
+        document.execCommand('copy')
+        document.body.removeChild( node )
+    }
+
+    isOS() {
+        return navigator.userAgent.match(/ipad|iphone/i);
     }
 }
 
